@@ -1,3 +1,4 @@
+# 自動打包，只要去 gitkraken commit 跟 push 就好
 # Action 名稱
 name: Deploy
 # 觸發時機，當推送到分支 master 時
