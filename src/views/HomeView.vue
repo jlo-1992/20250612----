@@ -1,12 +1,20 @@
 <template>
-  <v-container>
+  <v-container class="container">
     <v-row>
       <v-col cols="12">
         <h1>TOMATO IN ACTION</h1>
-        <!-- <h2>{{ list.currentItem }}</h2>
-        <h2>{{ list.timeleft }}</h2> -->
+        <h2>{{ list.currentItem }}</h2>
+        <!-- <h2>{{ list.timeleft }}</h2>  -->
         <!-- <h2>{{ timeLeftText }}</h2> -->
         <DigitNumber v-for="(data, i) in timeLeftText" :key="i" color="white" :data="data" />
+      </v-col>
+      <v-col cols="12">
+        <img
+          alt="fakey happy tomato"
+          class="tomato"
+          :class="{ bouncing: status === STATUS.COUNTING }"
+          src="../assets/tomato.png"
+        />
       </v-col>
       <v-col cols="12">
         <!--
@@ -119,3 +127,42 @@ const timeLeftText = computed(() => {
   return m + ':' + s
 })
 </script>
+
+<style scoped lang="scss">
+$jump-height: 40px;
+$move-distance: 500px;
+$jump-duration: 0.1s;
+$walk-duration: 10s;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .tomato {
+    width: 200px;
+    // transition: transform 0.3s ease-in-out;
+
+    &.bouncing {
+      animation: combinedMove $walk-duration infinite ease-in-out;
+    }
+  }
+}
+
+@keyframes combinedMove {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate($move-distance/2, -$jump-height);
+  }
+  50% {
+    transform: translate($move-distance, 0);
+  }
+  75% {
+    transform: translate($move-distance/2, -$jump-height);
+  }
+}
+</style>

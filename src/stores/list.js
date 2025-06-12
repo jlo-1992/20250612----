@@ -60,7 +60,7 @@ export const useListStore = defineStore(
 
     // .shift() 會回傳並刪除陣列的第一個項目
     const setCurrentItem = () => {
-      currentItem.value = isBreak.value ? '休息時間' : items.value.shift().text
+      currentItem.value = isBreak.value ? 'SAUCE & CHILL' : items.value.shift().text
     }
 
     const countdown = () => {

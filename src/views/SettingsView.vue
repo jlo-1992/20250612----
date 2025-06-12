@@ -2,15 +2,15 @@
   <v-container>
     <v-row>
       <v-col cols="12">
-        <h1 class="text-center">鈴聲設定</h1>
+        <h1 class="text-center">ALARM-A-DORE SETTINGS</h1>
       </v-col>
       <v-col cols="12">
         <v-table>
           <thead>
             <tr>
-              <th>名稱</th>
-              <th>試聽</th>
-              <th>選擇</th>
+              <th>YOUR RINGY THINGY</th>
+              <th>TEST-A-DING</th>
+              <th>PICK-A-DING</th>
             </tr>
           </thead>
           <tbody>

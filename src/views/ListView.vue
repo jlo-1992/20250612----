@@ -20,7 +20,7 @@
           v-model="input"
           append-icon="mdi-plus"
           clearable
-          label="新增事項"
+          label="PLANT A NEW TOMATO"
           :rules="[rules.required, rules.length]"
           @click:append="onInputSubmit"
           @keydown.enter="onInputSubmit"
@@ -112,10 +112,10 @@ const editTextField = useTemplateRef('editTextField')
 const rules = {
   // 自訂名稱: function
   required: value => {
-    return Boolean(value) || '必填'
+    return Boolean(value) || 'NO SKIPPING-tomatoes need details!'
   },
   length: value => {
-    return value.length >= 3 || '必須要三個字以上'
+    return value.length >= 3 || 'Need at least 3 juicy bites!'
   },
 }
 
