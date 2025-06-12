@@ -2,10 +2,10 @@
   <v-container>
     <v-row>
       <v-col cols="12">
-        <h1>目前事項</h1>
-        <h2>{{ list.currentItem }}</h2>
-        <h2>{{ list.timeleft }}</h2>
-        <h2>{{ timeLeftText }}</h2>
+        <h1>TOMATO IN ACTION</h1>
+        <!-- <h2>{{ list.currentItem }}</h2>
+        <h2>{{ list.timeleft }}</h2> -->
+        <!-- <h2>{{ timeLeftText }}</h2> -->
         <DigitNumber v-for="(data, i) in timeLeftText" :key="i" color="white" :data="data" />
       </v-col>
       <v-col cols="12">

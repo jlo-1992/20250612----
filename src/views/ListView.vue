@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col cols="12">
-        <h1 class="text-center">未完成</h1>
+        <h1 class="text-center">TOMATOES IN WAITING</h1>
       </v-col>
       <v-col cols="12">
         <!--
@@ -28,13 +28,13 @@
         <v-table>
           <thead>
             <tr>
-              <th>事項</th>
-              <th>操作</th>
+              <th>THE TOMATO QUEUE</th>
+              <th>TOMATO TUNER</th>
             </tr>
           </thead>
           <tbody>
             <tr v-if="list.items.length === 0">
-              <td colspan="2">沒有項目</td>
+              <td colspan="2">You've squashed all your tasks. Good Job!</td>
             </tr>
             <tr v-for="(item, i) in list.items" :key="item.id">
               <td>
@@ -63,19 +63,19 @@
         </v-table>
       </v-col>
       <v-col cols="12">
-        <h1 class="text-center">已完成</h1>
+        <h1 class="text-center">ALL KETCHUP-ED!</h1>
       </v-col>
       <v-col cols="12">
         <v-table>
           <thead>
             <tr>
-              <th>事項</th>
-              <th>操作</th>
+              <th>THE TOMATO QUEUE</th>
+              <th>TOMATO TUNER</th>
             </tr>
           </thead>
           <tbody>
             <tr v-if="list.finishedItems.length === 0">
-              <td colspan="2">沒有事項</td>
+              <td colspan="2">Empty plate! Finish something to fill it!</td>
             </tr>
             <tr v-for="item in list.finishedItems" :key="item.id">
               <td>{{ item.text }}</td>

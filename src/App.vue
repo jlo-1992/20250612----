@@ -2,10 +2,14 @@
   <v-app>
     <v-app-bar>
       <v-container class="d-flex align-center">
-        <v-app-bar-title>番茄鐘</v-app-bar-title>
-        <v-btn prepend-icon="mdi-home" to="/">首頁</v-btn>
-        <v-btn prepend-icon="mdi-format-list-bulleted" to="/list">事項</v-btn>
-        <v-btn prepend-icon="mdi-cog" to="/settings">設定</v-btn>
+        <v-app-bar-title>
+          <router-link style="text-decoration: none; color: white" to="/">
+            FAKEY HAPPY TOMATO
+          </router-link>
+        </v-app-bar-title>
+        <v-btn prepend-icon="mdi-home" to="/">THE GARDEN GATE</v-btn>
+        <v-btn prepend-icon="mdi-format-list-bulleted" to="/list">TO-MA-DO LIST</v-btn>
+        <v-btn prepend-icon="mdi-cog" to="/settings">SPICE SETTINGS</v-btn>
       </v-container>
     </v-app-bar>
     <v-main>
