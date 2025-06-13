@@ -1,14 +1,11 @@
 <template>
   <v-container class="container">
     <v-row>
-      <v-col cols="12">
+      <v-col cols="12" style="height: 200px">
         <h1>TOMATO IN ACTION</h1>
         <h2>{{ list.currentItem }}</h2>
         <!-- <h2>{{ list.timeleft }}</h2>  -->
         <!-- <h2>{{ timeLeftText }}</h2> -->
-        <DigitNumber v-for="(data, i) in timeLeftText" :key="i" color="white" :data="data" />
-      </v-col>
-      <v-col cols="12">
         <img
           alt="fakey happy tomato"
           class="tomato"
@@ -16,7 +13,10 @@
           src="../assets/tomato.png"
         />
       </v-col>
-      <v-col cols="12">
+      <v-col class="col" cols="12">
+        <DigitNumber v-for="(data, i) in timeLeftText" :key="i" color="white" :data="data" />
+      </v-col>
+      <v-col class="col" cols="12">
         <!--
           開始按鈕的停用條件:
           1. 倒數中
@@ -129,40 +129,100 @@ const timeLeftText = computed(() => {
 </script>
 
 <style scoped lang="scss">
-$jump-height: 40px;
-$move-distance: 500px;
-$jump-duration: 0.1s;
-$walk-duration: 10s;
+$bounce-height: 120px;
+$bounce-duration: 3s;
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  backface-visibility: hidden;
+  position: relative;
 
+  .col {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 350px;
+  }
   .tomato {
-    width: 200px;
-    // transition: transform 0.3s ease-in-out;
+    position: absolute;
+    top: 15%;
+    left: 33%;
+    // left:60%;
+    width: 130px;
 
     &.bouncing {
-      animation: combinedMove $walk-duration infinite ease-in-out;
+      animation: bounce 6s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+      transform-origin: bottom center;
     }
   }
 }
 
-@keyframes combinedMove {
-  0%,
-  100% {
-    transform: translate(0, 0);
+@keyframes bounce {
+  0% {
+    transform: translate(0px, 20%) scale(1);
+  }
+  5% {
+    transform: translate(50px, -40px) scale(1.05);
+  }
+  10% {
+    transform: translate(100px, 20%) scale(0.95);
+  }
+  15% {
+    transform: translate(150px, -40px) scale(1.05);
+  }
+  20% {
+    transform: translate(200px, 20%) scale(0.95);
   }
   25% {
-    transform: translate($move-distance/2, -$jump-height);
+    transform: translate(250px, -40px) scale(1.05);
+  }
+  30% {
+    transform: translate(300px, 20%) scale(0.95);
+  }
+  35% {
+    transform: translate(350px, -40px) scale(1.05);
+  }
+  40% {
+    transform: translate(400px, 20%) scale(0.95);
+  }
+  45% {
+    transform: translate(450px, -40px) scale(1.05);
   }
   50% {
-    transform: translate($move-distance, 0);
+    transform: translate(500px, 20%) scale(0.95);
+  }
+
+  55% {
+    transform: translate(450px, -40px) scale(1.05);
+  }
+  60% {
+    transform: translate(400px, 20%) scale(0.95);
+  }
+  65% {
+    transform: translate(350px, -40px) scale(1.05);
+  }
+  70% {
+    transform: translate(300px, 20%) scale(0.95);
   }
   75% {
-    transform: translate($move-distance/2, -$jump-height);
+    transform: translate(250px, -40px) scale(1.05);
+  }
+  80% {
+    transform: translate(200px, 20%) scale(0.95);
+  }
+  85% {
+    transform: translate(150px, -40px) scale(1.05);
+  }
+  90% {
+    transform: translate(100px, 20%) scale(0.95);
+  }
+  95% {
+    transform: translate(50px, -40px) scale(1.05);
+  }
+  100% {
+    transform: translate(0px, 20%) scale(0.95);
   }
 }
 </style>
