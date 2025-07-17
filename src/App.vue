@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app :class="theme">
     <v-app-bar>
       <v-container class="d-flex align-center">
         <v-app-bar-title>
@@ -12,7 +12,9 @@
         <v-btn prepend-icon="mdi-cog" to="/settings">SPICE SETTINGS</v-btn>
       </v-container>
     </v-app-bar>
+
     <v-main>
+      <BgColorTog />
       <!--
       <SlotExample v-slot="apple">
         <h1>{{ apple }}</h1>
@@ -58,6 +60,25 @@
 // import CardA from '@/components/CardA.vue'
 // import CardB from '@/components/CardB.vue'
 // import SlotExample from '@/components/SlotExample.vue'
-
 // const components = [CardA, CardB]
+
+import { provide, ref } from 'vue'
+import BgColorTog from './components/BgColorTog.vue'
+
+const theme = ref('light')
+
+provide('theme', theme)
+provide('setTheme', val => (theme.value = val))
 </script>
+
+<style scoped>
+.light {
+  background-color: rgb(224, 224, 179);
+  color: #000;
+}
+
+.dark {
+  background-color: #000;
+  color: #fff;
+}
+</style>

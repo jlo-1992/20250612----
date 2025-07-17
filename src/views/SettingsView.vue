@@ -4,7 +4,8 @@
       <v-col cols="12">
         <h1 class="text-center">ALARM-A-DORE SETTINGS</h1>
       </v-col>
-      <v-col cols="12">
+      <v-col cols="3" />
+      <v-col cols="6">
         <v-table>
           <thead>
             <tr>
@@ -30,6 +31,7 @@
           </tbody>
         </v-table>
       </v-col>
+      <v-col cols="3" />
     </v-row>
   </v-container>
 </template>
